@@ -1,30 +1,39 @@
+Ottomaatit-hakija etsii lähimmän Ottomaatin käyttäjän sijainnin tai annetun osoitteen perusteella.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Toteutus on tehty Mysql-tietokannalla, javascriptillä ja php:llä. Sivu käyttää tiedostoja Test.html -> Script.js -> load.php.
 
+Tietokannan rakenne:
++-------------------------+
+| Tables_in_Ottomaatit_db |
++-------------------------+
+| Comments                |
+| Ottomaatit              |
++-------------------------+
 
-Hi there! Welcome to Cloud9 IDE!
+Taulujen rakenne:
 
-To get you started, we have created a small hello world application.
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | int(11)      | NO   | PRI | NULL    |       |
+| address   | varchar(45)  | NO   |     | NULL    |       |
+| city      | varchar(15)  | NO   |     | NULL    |       |
+| location  | varchar(45)  | NO   |     | NULL    |       |
+| latitude  | decimal(8,6) | NO   |     | NULL    |       |
+| longitude | decimal(8,6) | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| comment_id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| ottomaatti_id | int(11)      | NO   | MUL | NULL    |                |
+| name          | varchar(15)  | NO   |     | NULL    |                |
+| comment       | varchar(100) | YES  |     | NULL    |                |
+| timestamp     | date         | NO   |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
 
-1) Open the hello-world.php file
+Data palautetaan tietokannasta muodossa:
 
-2) Follow the run instructions in the file's comments
+{\"id\":\"3714\",\"address\":\"TORNIONKATU 17\",\"city\":\"KEMI\",\"location\":\"KARIHAARAN KIOSKI\",\"latitude\":\"65.759886\",\"longitude\":\"24.546653\"}","{\"id\":\"3715\",\"address\":\"KAIVOKATU 1\",\"city\":\"HELSINKI\",\"location\":\"RAUTATIEASEMA\",\"latitude\":\"60.171000\",\"longitude\":\"24.941670\"}
 
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
-
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+Kommenttien tallentamista ei ole toteutettu käyttöliittymälle asti, mutta load.php sisältää myös tallennuksen kommenteille ja Script.js ajax-kutsun tallennukselle.
