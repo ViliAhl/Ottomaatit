@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Ottomaatit</title>
+      
+      <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+  
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>My first trial</title>
+        <meta name="description" content="This is a trial">
+        <meta name="author" content="jlalovi">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="http://i.icomoon.io/public/temp/90320a65cd/UntitledProject2/style.css">
+
+    </head>
+
+    <body>
+ 
+        <div id="main-container">
+            <div id="left-container"> <!-- Left part -->
+            <div id="map" class="container"> 
+                    <div class="map">
+                        
+                        <a href="#26" class="btn"><span class="fontawesome-plus"></span></a>
+                        <a href="#27" class="btn"><span class="fontawesome-minus"></span></a>
+                    </div>
+                   
+                </div>
+                 <div id="newPostInner">
+                        <p>Search empty field to search via GPS <br>Search by street name for example: "Tammitie 4" or <br>specified search: "Tammitie 4, Helsinki"</p>
+                        </div>
+                 <input type="text" id ="address" placeholder="Enter address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter address'">
+                    <button class="btn-find" function="btnClick">a</button>
+
+             
+                    <div class="newPostContent">
+                          </div> 
+                   
+                </div>
+
+            <div id="middle-container"> <!-- Middle Part -->
+                <div id="relatedPosts" class="container"> <!-- Related Posts -->
+                    <div class="bar title-bar">
+                        <h2>Announcements</h2>
+                    </div>
+                     
+                    <div class="rpost">
+                        <form>
+                         <input type="text" class="commentinput" placeholder="User" id="user">
+                         <input type="text" class="commentinput" id="messageinput" placeholder="Message">
+                     </form>
+                    </div>
+                    <div class="rpost">
+                    </div>
+                    <div id="addComment">
+                        
+                    </div>
+                </div>
+
+           
+                        
+            </div>
+
+            
+            </div>
+        </div>
+        
+
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="Script.js" type="text/Javascript"></script>
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ1z6wInYJPjxmOkWWAPfmPLUi7SELRw4&libraries=geometry&callback=initMap"></script>
+      
+    </body>
+</html>
+  
+  
+</body>
+</html>
